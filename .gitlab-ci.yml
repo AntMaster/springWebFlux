@@ -1,0 +1,29 @@
+stages:
+- build
+- package
+- deploy
+
+maven-build:
+  image: maven:3-jdk-8
+  stage: build
+  script:
+  - mvn clean -Dmaven.test.skip=true package
+  - ls
+  artifacts:
+    paths:
+    - target/*.jar
+  tags:
+  - tag
+  target/demo-0.0.1-SNAPSHOT.jar
+docker-build:
+  stage: package
+  script:
+  #- export DOCKER_HOST="tcp://localhost:2375"
+  - docker build -t zhangyu/demo .
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+  - docker push registry.gitlab.com/firstgroup/demo
+  #    - docker build -t gitlab.my.com/group/app .
+  #    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.my.com/group/app
+  #    - docker push gitlab.my.com/group/app
+  tags:
+  - tag
