@@ -1,16 +1,10 @@
 package com.example.demo.config;
 
-import com.example.demo.handler.CalculatorHandler;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
-import org.springframework.util.ReflectionUtils;
-import org.springframework.web.reactive.function.server.*;
-import reactor.core.publisher.Mono;
 
 @Configuration
 public class Config {
+/*
     @Bean
     @Autowired
     public RouterFunction<ServerResponse> routerFunction(final CalculatorHandler calculatorHandler) {
@@ -22,6 +16,7 @@ public class Config {
                                 .onErrorResume(ex -> ServerResponse.status(HttpStatus.INTERNAL_SERVER_ERROR).build()))
                         .orElse(ServerResponse.badRequest().build()));
     }
+*/
 
 
 }

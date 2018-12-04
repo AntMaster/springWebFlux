@@ -1,18 +1,12 @@
 package com.example.demo.handler;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Mono;
-import reactor.util.function.Tuple2;
-import reactor.util.function.Tuples;
-import java.util.function.BiFunction;
 
 
 @Component
 public class CalculatorHandler {
 
-    public Mono<ServerResponse> add(final ServerRequest request) {
+    /*public Mono<ServerResponse> add(final ServerRequest request) {
         return calculate(request, (v1, v2) -> v1 + v2);
     }
 
@@ -45,5 +39,5 @@ public class CalculatorHandler {
         } catch (final NumberFormatException e) {
             return 0;
         }
-    }
+    }*/
 }

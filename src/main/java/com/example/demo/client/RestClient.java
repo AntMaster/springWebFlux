@@ -2,12 +2,11 @@ package com.example.demo.client;
 
 import com.example.demo.entity.User;
 import org.springframework.http.MediaType;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
+
 
 public class RestClient {
     public static void main(final String[] args) {
-        final User user = new User();
+      /*  final User user = new User();
         user.setUsername("Test");
         user.setEmail("test@example.org");
         final WebClient client = WebClient.create("http://localhost:8080/user");
@@ -17,6 +16,6 @@ public class RestClient {
                 .body(Mono.just(user), User.class)
                 .exchange()
                 .flatMap(response -> response.bodyToMono(User.class));
-        System.out.println(createdUser.block());
+        System.out.println(createdUser.block());*/
     }
 }
